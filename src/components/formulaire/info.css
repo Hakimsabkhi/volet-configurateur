@@ -1,0 +1,96 @@
+.closeButton {
+  position:absolute; /* Position it relative to the form's position if the form is positioned relatively or absolutely */
+  top: 10px; /* Adjust as needed to align it with the form's top edge */
+  right : 2%; /* Adjust as needed to align it with the form's right edge */
+  padding: 5px 10px; /* Add some padding for better clickability */
+  background-color:rgb(68, 50, 110);
+  color: white;
+  border: none; /* No border */
+  border-radius: 5px; /* Optional: Rounded corners */
+  cursor: pointer; /* Change cursor to pointer to indicate it's clickable */
+  font-weight: bold; /* Optional: Make the 'X' bold */
+  font-size: 16px; /* Adjust the font size as needed */
+  width: 30px;
+  height: 30px;
+}
+
+
+/* Optional: Change appearance on hover for better user feedback */
+.closeButton:hover {
+  background-color: #ffffff; /* Red background for visibility */
+  color: rgb(0, 0, 0);
+}
+
+.formeBox{
+  position: fixed;
+  top: 2%;
+  left: 40%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  z-index: 1000;
+  width: 450px;
+  padding: 10px;
+  background-color: rgba(0, 139, 70, 0.61); /* Semi-transparent background */
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  align-items: center;
+}
+
+.section {
+  padding-top: 30px;
+}
+
+.secondSection {
+  width: 450px;
+}
+
+.Optiondelivraison{
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  margin-bottom: 10px;
+}
+
+label {
+  color: #ffffff;
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+
+.label-deliveryOption {
+  margin-top: 20px;
+}
+
+.label-class {
+  margin-top: 10px;
+}
+
+.delivery-option-select {
+  width: 50%; /* Full width */
+  padding: 10px; /* Some padding */
+  margin: 10px 0; /* Margin for spacing */
+  border: 1px solid #ccc; /* Grey border */
+  border-radius: 4px; /* Rounded borders */
+  box-sizing: border-box; /* Box-sizing */
+  margin-bottom: 10px;
+}
+
+
+input[type="text"],
+input[type="email"],
+input[type="tel"] {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 20px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  transition: border-color 0.3s;
+}
+
+
+input:invalid {
+  border-color: #dc3545;
+}
+

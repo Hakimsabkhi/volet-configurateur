@@ -1,0 +1,52 @@
+.choices-container {
+  display: flex;
+  flex-direction: column;
+  gap: 10px ;
+  width: 420px;
+  margin-bottom: 20px;
+}
+
+.choice-btn {
+  display: flex;
+  background-color: rgb(68, 50, 110);
+  border: none;
+  border-radius: 10px;
+  padding: 10px;
+  border: 2px solid rgb(68, 50, 110);
+  gap: 20px;
+}
+
+.choice-btn:hover {
+  background-color: rgb(255, 255, 255);
+  color: #000;
+}
+
+.button-image {
+  width: 80px;
+  height: 80px;
+}
+
+.details {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  vertical-align: middle;
+  margin: auto;
+}
+
+.sous-details {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+
+.choice-label {
+  vertical-align: middle;
+  font-weight: bold;
+  text-transform: capitalize;
+}
+
+.choice-description {
+  font-size: 12px;
+}

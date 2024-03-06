@@ -1,0 +1,109 @@
+.ma-container {
+  display: flex;
+  justify-content: center;
+  gap: 10px ;
+  flex-wrap: wrap;
+  margin-top: 10px;
+}
+
+
+.ma-container-INTERRUPTEUR {
+  display: flex;
+  justify-content: center;
+  gap: 10px ;
+  align-self: center;
+  margin: auto;
+}
+
+.ma-btn {
+  display: flex;
+  background-color: rgb(68, 50, 110);
+  border: 2px solid rgb(68, 50, 110);
+  border-radius: 5px;
+  width: 245px;
+  height: 38px
+  
+}
+
+.INTERRUPTEUR-btn.selected  {
+  color: rgb(0, 0, 0); /* This will change the text color to blue when selected */
+  background-color: #ffffff;
+  border: 2px solid rgb(68, 50, 110);
+
+}
+
+.INTERRUPTEUR-btn {
+  width: 160px;
+  
+    background-color: rgb(68, 50, 110);
+    border: 2px solid rgb(68, 50, 110);
+    border-radius: 5px;
+  
+  }
+
+.choice-btn:hover {
+  background-color: rgb(255, 255, 255);
+  color: #000;
+}
+
+.button-image {
+  width: 80px;
+  height: 80px;
+}
+
+.ma-details {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  text-align: center;
+  vertical-align: middle;
+  margin-left: 10px;
+}
+
+.ma-sous-details-Tele {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  background-color: rgb(68, 50, 110);
+  border: none;
+  border-radius: 5px;
+}
+
+.ma-sous-details {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+}
+
+
+.choice-label {
+  vertical-align: middle;
+  font-weight: bold;
+  text-transform: capitalize;
+}
+
+.choice-description {
+  font-size: 12px;
+}
+
+.ma-button-image {
+  width: 50px;
+  height: 50px;
+
+}
+
+.text {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.section-1{
+  display: flex;
+  justify-content: space-around;
+}
+
+.T-label{
+  padding-top: 10px;
+}
+

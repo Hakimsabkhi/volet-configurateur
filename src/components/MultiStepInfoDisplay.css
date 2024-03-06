@@ -1,0 +1,9 @@
+/* MultiStepInfoDisplay.css */
+
+.info-display {
+display: flex;
+flex-direction: column;
+text-align: left;
+width: 450px;
+font-size: 16px;
+}
