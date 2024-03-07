@@ -104,7 +104,7 @@ function Manoeuvre() {
       </div>
       {manoeuvreType === 'Manuel' && (
         <div>
-          <h3 className="text">Outil De Commande</h3>
+          <h2 className="text">Outil De Commande</h2>
           <div className="ma-container">
             {manualOptions.map((maOption, index) => (
               <label key={index} onClick={() => handleManualOption(maOption)} className={`ma-btn ${maOption.label === manualType ? 'selected' : ''}`}>
@@ -122,7 +122,7 @@ function Manoeuvre() {
       )}
       {manoeuvreType === 'Motorisé' && (
         <div>
-          <h3 className="text">Type de Motorisation (marque : Becker)</h3>
+          <h2 className="text">Type de Motorisation (marque : Becker)</h2>
           <div className="ma-container">
             {motoriseOptions.map((MoOption, index) => (
               <label key={index} onClick={() => handleMotoriseOption(MoOption)} className={`ma-btn ${MoOption.label === motoriseType ? 'selected' : ''}`}>
@@ -138,7 +138,7 @@ function Manoeuvre() {
           </div>
           {motoriseType === 'Radio' && (
             <div>
-              <h3 className="text">Télécommande :</h3>
+              <h2 className="text">Télécommande :</h2>
               <div className="ma-container">
                 {telecommandeOptions.map((Toption, index) => (
                   <label key={index} onClick={() => handleTelecommandeOption(Toption)} className={`ma-btn ${Toption.label === telecommandeType ? 'selected' : ''}`}>
@@ -154,7 +154,7 @@ function Manoeuvre() {
               </div>
               {telecommandeType === 'Avec' && (
             <div>
-              <h3 className="text"> Commande :</h3>
+              <h2 className="text"> Commande :</h2>
               <div className="ma-container">
                 {commandeOptions.map((Coption, index) => (
                   <label key={index} onClick={() => handleCommandeOption(Coption)} className={`ma-btn ${Coption.label === commandeType ? 'selected' : ''}`}>
@@ -174,7 +174,7 @@ function Manoeuvre() {
           )}        
           {motoriseType === 'Filaire' && (
               <div>
-                <h3>Interrupteur</h3>
+                <h2>Interrupteur</h2>
                 <div className="ma-container-INTERRUPTEUR">
                   {interrupteurOptions.map((Eoption, index) => (
                     <label key={index} onClick={() => handleInterrupteurOption(Eoption)} className={`INTERRUPTEUR-btn ${Eoption.label === interrupteurType ? 'selected' : ''}`}>
@@ -191,7 +191,7 @@ function Manoeuvre() {
               </div>
           )}
               <div>
-                <h3>Sortie de câble</h3>
+                <h2>Sortie de câble</h2>
                 <div className="ma-container">
                   {sortieDeCableOptions.map((Coption, index) => (
                     <label key={index} onClick={() => handleSortieDeCableOption(Coption)} className={`ma-btn ${Coption.label === sortieDeCableType ? 'selected' : ''}`}>

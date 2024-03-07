@@ -33,7 +33,10 @@ body {
   display: none;
 }
 
-.ma-btn.selected ,.choice-btn.selected, .color-label.selected, .color-choice.selected {
+.ma-btn.selected,
+.choice-btn.selected,
+.color-label.selected,
+.color-choice.selected {
   color: rgb(0, 0, 0); /* This will change the text color to blue when selected */
   background-color: #ffffff;
   border: 2px solid rgb(68, 50, 110);
@@ -59,8 +62,18 @@ h2 {
   font-weight: bold;
 }
 
-h3,p {
+h3,
+p {
   font-size: 12px;
+}
+
+h3 {
+  display: block;
+  margin-block-start: 0.5em;
+  margin-block-end: 0.5em;
+  margin-inline-start: 0px;
+  margin-inline-end: 0px;
+  font-weight: bold;
 }
 
 p {
@@ -125,13 +138,13 @@ canvas {
   height: 550px;
 }
 
-.StepStyle{
+.StepStyle {
   display: flex;
   flex-direction: column;
   justify-content: center;
 }
 
-.StepStyleManoeuvre{
+.StepStyleManoeuvre {
   display: flex;
   flex-direction: column;
 }
@@ -209,32 +222,30 @@ canvas {
   color: #000;
 }
 
-
-@media (max-height: 800px){
-
+@media (max-height: 800px) {
   h1 {
     font-size: 14px;
   }
-  
+
   h2 {
     font-size: 14px;
   }
-  
-  h3,p {
+
+  h3,
+  p {
     font-size: 10px;
   }
   .multi-step-menu {
-    height: 485px;
+    height: 450px;
   }
 
   .StepStyle {
     height: 80%;
-}
+  }
 
-.StepStyleManoeuvre{
-  display: flex;
-  flex-direction: column;
-  height: 80%;
+  .StepStyleManoeuvre {
+    display: flex;
+    flex-direction: column;
+    height: 80%;
+  }
 }
-}
-
