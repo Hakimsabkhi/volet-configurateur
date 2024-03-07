@@ -33,13 +33,13 @@ function LameEtDimention() {
   }
 
   const choices = [
-    { label: 'Lame 41', description: "Lames vendues à l'unité, en Aluminium plié et injectées de mousse isolante.", image: Lame41Image },
+    { label: 'Lame 41', description: "Lames en Aluminium plié et injectées de mousse isolante.", image: Lame41Image },
     { label: 'Lame 55', description: 'Lame volet roulant aluminium isolée 55x14.', image: Lame55Image }
   ]
 
   // Render method returns JSX for the component UI.
   return (
-    <div>
+    <div className='LameetDimention'>
       <div className="choices-container">
         {choices.map((lameChoice, index) => (
           <label key={index} onClick={() => handleLameChoice(lameChoice)} className={`choice-btn ${lameChoice.label === lameSelection ? 'selected' : ''}`}>
@@ -49,7 +49,7 @@ function LameEtDimention() {
                 <h2 className="choice-label">{lameChoice.label}</h2>
                 <input type="checkbox" id={`checkbox-${lameChoice.label}`} name={`checkbox-${lameChoice.label}`} checked={lameSelection === lameChoice.label} onChange={() => handleLameChoice(lameChoice)} className="choice-checkbox" />
               </div>
-              <div className="choice-description">{lameChoice.description}</div>
+              <p className="choice-description">{lameChoice.description}</p>
             </div>
           </label>
         ))}

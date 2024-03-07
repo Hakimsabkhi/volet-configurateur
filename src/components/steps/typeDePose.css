@@ -3,7 +3,6 @@
   flex-direction: column;
   gap: 10px ;
   width: 420px;
-  margin-bottom: 20px;
 }
 
 .choice-btn {
@@ -19,11 +18,6 @@
 .choice-btn:hover {
   background-color: rgb(255, 255, 255);
   color: #000;
-}
-
-.button-image {
-  width: 80px;
-  height: 80px;
 }
 
 .details {
@@ -47,6 +41,8 @@
   text-transform: capitalize;
 }
 
-.choice-description {
-  font-size: 12px;
+
+
+@media (max-height: 800px){
+
 }

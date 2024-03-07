@@ -45,7 +45,7 @@ function TypeDePose() {
                 {/* Add any additional content for the checkbox label if needed */}
               </label>
             </div>
-            <div className="choice-description">{choice.description}</div>
+            <p className="choice-description">{choice.description}</p>
           </div>
         </label>
       ))}

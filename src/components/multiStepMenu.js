@@ -62,8 +62,8 @@ function MultiStepMenu({ onSelectionsChange }) {
         <StepNavigator currentStep={currentStep} setCurrentStep={setCurrentStep} totalSteps={stepsForNavigator.length} titles={stepsForNavigator.reduce((acc, step) => ({ ...acc, [step.id]: step.title }), {})} />
       </div>
       <div className="multi-step-menu">
-        <div className='StepStyle'>
-          <h1>{steps.find((step) => step.id === currentStep)?.title}</h1>
+        <div className='StepStyleManoeuvre'>
+          <h2>{steps.find((step) => step.id === currentStep)?.title}</h2>
           {renderCurrentStep()}
         </div>
         <div className="container">

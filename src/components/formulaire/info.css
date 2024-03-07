@@ -1,9 +1,9 @@
 .closeButton {
-  position:absolute; /* Position it relative to the form's position if the form is positioned relatively or absolutely */
+  position: absolute; /* Position it relative to the form's position if the form is positioned relatively or absolutely */
   top: 10px; /* Adjust as needed to align it with the form's top edge */
-  right : 2%; /* Adjust as needed to align it with the form's right edge */
+  right: 2%; /* Adjust as needed to align it with the form's right edge */
   padding: 5px 10px; /* Add some padding for better clickability */
-  background-color:rgb(68, 50, 110);
+  background-color: rgb(68, 50, 110);
   color: white;
   border: none; /* No border */
   border-radius: 5px; /* Optional: Rounded corners */
@@ -14,14 +14,13 @@
   height: 30px;
 }
 
-
 /* Optional: Change appearance on hover for better user feedback */
 .closeButton:hover {
   background-color: #ffffff; /* Red background for visibility */
   color: rgb(0, 0, 0);
 }
 
-.formeBox{
+.formeBox {
   position: fixed;
   top: 2%;
   left: 40%;
@@ -45,7 +44,7 @@
   width: 400px;
 }
 
-.Optiondelivraison{
+.Optiondelivraison {
   display: flex;
   justify-content: center;
   gap: 20px;
@@ -76,10 +75,9 @@ label {
   margin-bottom: 10px;
 }
 
-
-input[type="text"],
-input[type="email"],
-input[type="tel"] {
+input[type='text'],
+input[type='email'],
+input[type='tel'] {
   width: 100%;
   padding: 10px;
   margin-bottom: 20px;
@@ -89,8 +87,12 @@ input[type="tel"] {
   transition: border-color 0.3s;
 }
 
-
 input:invalid {
   border-color: #dc3545;
 }
 
+@media (max-height: 800px) {
+  label {
+    margin-bottom: 0px;
+  }
+}

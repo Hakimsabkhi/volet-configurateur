@@ -33,14 +33,6 @@ body {
   display: none;
 }
 
-p {
-  display: block;
-  margin-block-start: 8px;
-  margin-block-end: 8px;
-  margin-inline-start: 0px;
-  margin-inline-end: 0px;
-}
-
 .ma-btn.selected ,.choice-btn.selected, .color-label.selected, .color-choice.selected {
   color: rgb(0, 0, 0); /* This will change the text color to blue when selected */
   background-color: #ffffff;
@@ -52,21 +44,31 @@ p {
 }
 
 h1 {
-  font-size: 18px;
-  margin: 10px;
+  font-size: 16px;
   text-transform: uppercase;
 }
 
 h2 {
   font-size: 14px;
-  margin: 10px;
   text-transform: uppercase;
+  display: block;
+  margin-block-start: 0.5em;
+  margin-block-end: 0.5em;
+  margin-inline-start: 0px;
+  margin-inline-end: 0px;
+  font-weight: bold;
 }
 
-h3 {
-  font-size: 14px;
-  margin: 10px;
-  text-transform: uppercase;
+h3,p {
+  font-size: 12px;
+}
+
+p {
+  display: block;
+  margin-block-start: 0.5em;
+  margin-block-end: 0.5em;
+  margin-inline-start: 0px;
+  margin-inline-end: 0px;
 }
 
 a {
@@ -129,6 +131,11 @@ canvas {
   justify-content: center;
 }
 
+.StepStyleManoeuvre{
+  display: flex;
+  flex-direction: column;
+}
+
 .steps-menu {
   display: flex;
   flex-direction: column;
@@ -144,13 +151,7 @@ canvas {
 
 /* Styling for the menu title */
 .menu-title {
-  font-size: 12px;
   color: #ffffff;
-  margin-bottom: 15px;
-  text-align: center;
-  font-weight: bold;
-  text-transform: uppercase;
-  letter-spacing: 1px;
 }
 
 /* Styling for navigation buttons */
@@ -171,6 +172,12 @@ canvas {
   color: #000;
 }
 
+.LameetDimention {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  height: 400px;
+}
 .container {
   margin-top: 20px;
   width: 430px;
@@ -201,3 +208,33 @@ canvas {
   background-color: #ffffff;
   color: #000;
 }
+
+
+@media (max-height: 800px){
+
+  h1 {
+    font-size: 14px;
+  }
+  
+  h2 {
+    font-size: 14px;
+  }
+  
+  h3,p {
+    font-size: 10px;
+  }
+  .multi-step-menu {
+    height: 485px;
+  }
+
+  .StepStyle {
+    height: 80%;
+}
+
+.StepStyleManoeuvre{
+  display: flex;
+  flex-direction: column;
+  height: 80%;
+}
+}
+
