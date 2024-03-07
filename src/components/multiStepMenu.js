@@ -36,7 +36,7 @@ function MultiStepMenu({ onSelectionsChange }) {
 
   const modifyProduct = () => {
     setCurrentStep(1);
-    // Removed the toggle for showInformation here for clarity and user expectation
+    setShowInformation(false); // Explicitly close the information display when modifying the product
   };
 
   const toggleInformationDisplay = () => {
