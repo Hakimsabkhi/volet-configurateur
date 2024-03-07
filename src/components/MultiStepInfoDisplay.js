@@ -3,12 +3,17 @@ import { useSelector } from 'react-redux';
 import './MultiStepInfoDisplay.css';
 
 const MultiStepInfoDisplay = () => {
-  // Retrieve selected color state for each category
+  const prices = {
+    lameSelection: 50, // Example price
+    dimensions: 100, // Example base price for dimensions
+    installationType: 30,
+    selectedColors: 20, // Flat rate for any color selection
+    ManoeuvreType: 40, // Example price for ManoeuvreType
+  };
+
   const selectedCoulisseColor = useSelector((state) => state.volet.selectedColor.coulisse);
   const selectedTablierColor = useSelector((state) => state.volet.selectedColor.tablier);
   const selectedLameFinaleColor = useSelector((state) => state.volet.selectedColor.lameFinale);
-
-  // Retrieve other relevant state values
   const lameSelection = useSelector((state) => state.volet.lameSelection);
   const dimensions = useSelector((state) => state.volet.dimensions);
   const installationType = useSelector((state) => state.volet.installationType);
@@ -19,28 +24,73 @@ const MultiStepInfoDisplay = () => {
   const InterrupteurType = useSelector((state) => state.volet.InterrupteurType);
   const SortieDeCableType = useSelector((state) => state.volet.SortieDeCableType);
 
+  // Simplistic total price calculation for demonstration
+  const totalPrice = prices.lameSelection + prices.dimensions + prices.installationType + prices.selectedColors + prices.ManoeuvreType;
 
   return (
     <div className="info-display">
-      <p>Type de Lame: {lameSelection}</p>
-      <p>Largeur: {dimensions.Largeur} mm</p>
-      <p>Hauteur: {dimensions.Hauteur} mm</p>
-      <p>Type d'Installation: {installationType}</p>
-      <p>Couleur Coulisse: {selectedCoulisseColor}</p>
-      <p>Couleur Tablier: {selectedTablierColor}</p>
-      <p>Couleur Lame Finale: {selectedLameFinaleColor}</p>
-      <p>Type de Manoeuvre: {ManoeuvreType}</p>
-
-      {ManoeuvreType === 'Manuel' && <p>OUTIL DE COMMANDE: {ManualType}</p>}
-      {ManoeuvreType === 'Motorisé' && (
-        <>
-          <p>TYPE DE MOTORISATION: {MotoriseType}</p>
-          {/* Conditional rendering based on MotoriseType */}
-          {MotoriseType !== 'Filaire' && <p>TÉLÉCOMMANDE: {TelecommandeType}</p>}
-          <p>INTERRUPTEUR: {InterrupteurType}</p>
-          <p>SORTIE DE CÂBLE: {SortieDeCableType}</p>
-        </>
-      )}
+      <table>
+        <tbody>
+          <tr>
+            <th>Type de Lame</th>
+            <td>{lameSelection}</td>
+            <td className="price">{prices.lameSelection}€</td>
+          </tr>
+          <tr>
+            <th>Dimensions</th>
+            <td>Largeur: {dimensions.Largeur} mm, Hauteur: {dimensions.Hauteur} mm</td>
+            <td className="price">{prices.dimensions}€</td>
+          </tr>
+          <tr>
+            <th>Type d'Installation</th>
+            <td>{installationType}</td>
+            <td className="price">{prices.installationType}€</td>
+          </tr>
+          <tr>
+            <th>Couleurs</th>
+            <td>Coulisse: {selectedCoulisseColor},<br/>Tablier: {selectedTablierColor},<br/>Lame Finale: {selectedLameFinaleColor}</td>
+            <td className="price">{prices.selectedColors}€</td>
+          </tr>
+          <tr>
+            <th>Type de Manoeuvre</th>
+            <td>{ManoeuvreType}</td>
+            <td className="price">{prices.ManoeuvreType}€</td>
+          </tr>
+          {ManoeuvreType === 'Manuel' && (
+            <tr>
+              <th>Outil de commande</th>
+              <td>{ManualType}</td>
+              <td className="price">Included</td>
+            </tr>
+          )}
+          {ManoeuvreType === 'Motorisé' && (
+            <>
+              <tr>
+                <th>Type de motorisation</th>
+                <td>{MotoriseType}</td>
+                <td className="price">Included</td>
+              </tr>
+              {MotoriseType !== 'Filaire' && (
+                <tr>
+                  <th>Télécomande</th>
+                  <td>{TelecommandeType}</td>
+                  <td className="price">Included</td>
+                </tr>
+              )}
+              <tr>
+                <th>Interrepteur</th>
+                <td>{InterrupteurType}</td>
+                <td className="price">Included</td>
+              </tr>
+              <tr>
+                <th>Sortie de cable</th>
+                <td>{SortieDeCableType}</td>
+                <td className="price">Included</td>
+              </tr>
+            </>
+          )}
+        </tbody>
+      </table>
     </div>
   );
 };
