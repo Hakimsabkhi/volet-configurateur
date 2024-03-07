@@ -24,3 +24,15 @@ width: 400px;
   background-color: #f2f2f2; /* Light background for headers */
   color: black;
 }
+
+
+@media (max-height: 800px) {
+
+  .info-display td, .info-display th {
+    border: 1px solid #ffffff; /* White lines for separation */
+    padding: 8px;
+    text-align: left;
+    font-size: 0.7em; 
+  }
+
+}

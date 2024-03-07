@@ -4,11 +4,11 @@ import './MultiStepInfoDisplay.css';
 
 const MultiStepInfoDisplay = () => {
   const prices = {
-    lameSelection: 50, // Example price
-    dimensions: 100, // Example base price for dimensions
-    installationType: 30,
-    selectedColors: 20, // Flat rate for any color selection
-    ManoeuvreType: 40, // Example price for ManoeuvreType
+    lameSelection: 0.0, // Example price
+    dimensions: 0.0, // Example base price for dimensions
+    installationType: 0.0,
+    selectedColors: 0.0, // Flat rate for any color selection
+    ManoeuvreType: 0.0, // Example price for ManoeuvreType
   };
 
   const selectedCoulisseColor = useSelector((state) => state.volet.selectedColor.coulisse);
