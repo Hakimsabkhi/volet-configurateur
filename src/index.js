@@ -22,7 +22,7 @@ const Root = () => {
         <div className="content">
           <MultiStepMenu />
         </div>
-        <App />
+        <iframe title="New scene baking" frameborder="0" allowfullscreen mozallowfullscreen="true" webkitallowfullscreen="true" allow="autoplay; fullscreen; xr-spatial-tracking" xr-spatial-tracking execution-while-out-of-viewport execution-while-not-rendered web-share src="https://sketchfab.com/models/8c979e17364b4a47816ad05f394f30c7/embed?autostart=1&camera=0&ui_animations=0&ui_infos=0&ui_stop=0&ui_inspector=0&ui_watermark_link=0&ui_watermark=0&ui_ar=0&ui_help=0&ui_settings=0&ui_vr=0&ui_fullscreen=0&ui_annotations=0"> </iframe>
         <Overlay />
       </Suspense>
     </Provider>
