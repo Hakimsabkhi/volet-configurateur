@@ -2,7 +2,7 @@ import React from 'react';
 
 function CameraControl({ position, setPosition, target, setTarget }) {
   return (
-    <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', margin: '20px' }}>
+    <div className='overlay-Camera' style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', margin: '20px' }}>
     <div style={{ marginBottom: '20px' }}>
       Camera Position: 
       X: <input type="number" value={position.x} id="positionX" name="positionX" onChange={(e) => setPosition({ ...position, x: parseFloat(e.target.value) })} />

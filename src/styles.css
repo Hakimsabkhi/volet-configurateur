@@ -165,7 +165,7 @@ svg {
   margin: 0px 5px;
   border: none;
   border-radius: 5px;
-  background-color: rgb(68, 50, 110);
+  background-color: rgba(94, 197, 238, 0.644);
   color: white;
   font-size: 14px;
   cursor: pointer;
@@ -173,7 +173,7 @@ svg {
 }
 
 .multi-step-menu button.nav-btn:hover {
-  background-color: rgb(255, 255, 255);
+  background-color: rgb(115, 255, 1);
   color: #000;
 }
 
@@ -202,7 +202,7 @@ svg {
   padding: 10px 10px;
   margin: 0 5px;
   border: none;
-  background-color: rgb(68, 50, 110);
+  background-color: rgba(94, 197, 238, 0.644);
   cursor: pointer;
   color: white;
   width: auto;

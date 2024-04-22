@@ -57,6 +57,10 @@ function Viewer({ setPosition, setTarget }) {
         ui_fullscreen: 0,
         ui_annotations: 0,
         prevent_user_light_rotation: 1,
+        orbit_constraint_pitch_down: -Math.PI / 16,
+        orbit_constraint_pitch_up: Math.PI / 2,
+        orbit_constraint_zoom_in: 0,
+        orbit_constraint_zoom_out: 6,
       });
     } else {
       console.error('Sketchfab API script not loaded');
