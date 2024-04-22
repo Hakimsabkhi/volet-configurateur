@@ -3,6 +3,7 @@ import './Viewer.css';
 
 function Viewer({ setPosition, setTarget }) {
   const [apiClient, setApiClient] = useState(null);
+  const [userInteractionEnabled, setUserInteractionEnabled] = useState(false); // Directly manage user interaction state
 
   useEffect(() => {
     const iframe = document.getElementById('sketchfab-viewer');
@@ -17,15 +18,16 @@ function Viewer({ setPosition, setTarget }) {
             console.log('Viewer is ready');
             setApiClient(api);
 
-            // Disable user interaction
-            api.setUserInteraction(false, function(err) {
+            // Set initial user interaction status
+            api.setUserInteraction(userInteractionEnabled, function(err) {
               if (!err) {
-                console.log('User interaction disabled');
+                console.log(`Initial user interaction set to ${userInteractionEnabled}`);
               } else {
-                console.error('Failed to disable user interaction:', err);
+                console.error('Failed to set user interaction:', err);
               }
             });
 
+            // Regular camera updates
             const updateCameraDetails = () => {
               api.getCameraLookAt((err, cameraLookAt) => {
                 if (!err) {
@@ -64,16 +66,23 @@ function Viewer({ setPosition, setTarget }) {
       clearInterval(intervalId);
       if (apiClient) {
         apiClient.stop();
-        apiClient.setUserInteraction(true, function(err) {
-          if (!err) {
-            console.log('User interaction enabled');
-          } else {
-            console.error('Failed to enable user interaction:', err);
-          }
-        });
       }
     };
   }, [setPosition, setTarget]);
+
+  function toggleUserInteraction() {
+    if (apiClient) {
+      const newState = !userInteractionEnabled;
+      apiClient.setUserInteraction(newState, function(err) {
+        if (!err) {
+          console.log(`User interaction toggled to ${newState}`);
+          setUserInteractionEnabled(newState);
+        } else {
+          console.error('Failed to toggle user interaction:', err);
+        }
+      });
+    }
+  }
 
   function handleViewChange(position, target) {
     if (apiClient) {
@@ -81,7 +90,7 @@ function Viewer({ setPosition, setTarget }) {
         if (err) {
           console.error('Failed to set camera look at:', err);
         } else {
-          console.log(`Camera set to ${position}`);
+          console.log(`Camera set to position ${position}`);
         }
       });
     }
@@ -93,6 +102,7 @@ function Viewer({ setPosition, setTarget }) {
       <div className="overlay-buttons">
         <button style={{ width: '100px', height: '100px', margin: '5px' }} onClick={() => handleViewChange([-9.93, 6.88, 1.96], [-6.29, 2.11, 1.97])}>Outside View</button>
         <button style={{ width: '100px', height: '100px', margin: '5px' }} onClick={() => handleViewChange([-1.47, -1.74, 1.56], [-5.12, 3.01, 1.56])}>Inside View</button>
+        <button style={{ width: '100px', height: '100px', margin: '5px' }} onClick={toggleUserInteraction}>{userInteractionEnabled ? 'Disable Interaction' : 'Enable Interaction'}</button>
       </div>
     </div>
   );

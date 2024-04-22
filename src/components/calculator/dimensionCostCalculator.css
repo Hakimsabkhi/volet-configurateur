@@ -9,7 +9,7 @@
   align-items: center;
   width: 450px;
   padding: 10px;
-  background-color: rgba(0, 139, 70, 0.61); /* Semi-transparent background */
+  background-color: rgb(12, 17, 63); /* Semi-transparent background */
   border-radius: 8px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }

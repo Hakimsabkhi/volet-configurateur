@@ -12,6 +12,8 @@
 
 .overlay-buttons {
   position: absolute;
+  display: flex;
+  flex-direction: column;
   top: 20px; /* Adjust this value to place the buttons where you want them */
   right: 20px; /* Adjust this value to place the buttons where you want them */
   z-index: 10;

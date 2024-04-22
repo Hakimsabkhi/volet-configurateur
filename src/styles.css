@@ -39,7 +39,7 @@ body {
 .color-choice.selected {
   color: rgb(0, 0, 0); /* This will change the text color to blue when selected */
   background-color: #ffffff;
-  border: 2px solid rgb(68, 50, 110);
+  border: 2px solid rgb(255, 255, 255);
 }
 
 * {
@@ -123,7 +123,7 @@ svg {
   align-items: center;
   justify-content: space-between;
   padding: 10px;
-  background-color: rgba(0, 139, 70, 0.61); /* Semi-transparent background */
+  background-color: rgb(12, 17, 63); /* Semi-transparent background */
   border-radius: 8px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   z-index: 1000;
@@ -147,7 +147,7 @@ svg {
   align-items: center;
   justify-content: center;
   padding: 10px;
-  background-color: rgba(0, 139, 70, 0.61); /* Semi-transparent background */
+  background-color: rgb(12, 17, 63); /* Semi-transparent background */
   border-radius: 8px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   z-index: 1000;

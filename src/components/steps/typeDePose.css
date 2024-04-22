@@ -7,11 +7,11 @@
 
 .choice-btn {
   display: flex;
-  background-color: rgb(68, 50, 110);
+  background-color: rgba(94, 197, 238, 0.644);
   border: none;
   border-radius: 10px;
   padding: 10px;
-  border: 2px solid rgb(68, 50, 110);
+  border: 2px solid rgb(126, 126, 126);
   gap: 20px;
 }
 
