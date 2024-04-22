@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
-import './Viewer.css'
+import './Viewer.css';
+
 function Viewer({ setPosition, setTarget }) {
   const [apiClient, setApiClient] = useState(null);
 
@@ -15,6 +16,15 @@ function Viewer({ setPosition, setTarget }) {
           api.addEventListener('viewerready', () => {
             console.log('Viewer is ready');
             setApiClient(api);
+
+            // Disable user interaction
+            api.setUserInteraction(false, function(err) {
+              if (!err) {
+                console.log('User interaction disabled');
+              } else {
+                console.error('Failed to disable user interaction:', err);
+              }
+            });
 
             const updateCameraDetails = () => {
               api.getCameraLookAt((err, cameraLookAt) => {
@@ -44,10 +54,6 @@ function Viewer({ setPosition, setTarget }) {
         ui_vr: 0,
         ui_fullscreen: 0,
         ui_annotations: 0,
-        orbit_constraint_pitch_down: -Math.PI / 16,
-        orbit_constraint_pitch_up: Math.PI / 15,
-        orbit_constraint_zoom_in: 0,
-        orbit_constraint_zoom_out: 6,
         prevent_user_light_rotation: 1,
       });
     } else {
@@ -58,6 +64,13 @@ function Viewer({ setPosition, setTarget }) {
       clearInterval(intervalId);
       if (apiClient) {
         apiClient.stop();
+        apiClient.setUserInteraction(true, function(err) {
+          if (!err) {
+            console.log('User interaction enabled');
+          } else {
+            console.error('Failed to enable user interaction:', err);
+          }
+        });
       }
     };
   }, [setPosition, setTarget]);
@@ -76,9 +89,7 @@ function Viewer({ setPosition, setTarget }) {
 
   return (
     <div className="viewer-container">
-      <iframe
-        id="sketchfab-viewer"
-      ></iframe>
+      <iframe id="sketchfab-viewer"></iframe>
       <div className="overlay-buttons">
         <button style={{ width: '100px', height: '100px', margin: '5px' }} onClick={() => handleViewChange([-9.93, 6.88, 1.96], [-6.29, 2.11, 1.97])}>Outside View</button>
         <button style={{ width: '100px', height: '100px', margin: '5px' }} onClick={() => handleViewChange([-1.47, -1.74, 1.56], [-5.12, 3.01, 1.56])}>Inside View</button>
