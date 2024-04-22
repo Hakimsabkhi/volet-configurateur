@@ -1,0 +1,18 @@
+
+.viewer-container {
+  position: relative;
+  width: 100%; /* Adjust the width as needed */
+  height: 700px; /* Adjust the height as needed */
+}
+
+#sketchfab-viewer {
+  width: 100%;
+  height: 100%;
+}
+
+.overlay-buttons {
+  position: absolute;
+  top: 20px; /* Adjust this value to place the buttons where you want them */
+  right: 20px; /* Adjust this value to place the buttons where you want them */
+  z-index: 10;
+}
