@@ -40,6 +40,7 @@ function TypeDePose() {
                 checked={choice.label === installationType}
                 id={`checkbox-${choice.label}`}
                 onChange={() => handleCheckboxChange(choice)}
+                required
               />
               <label htmlFor={`checkbox-${choice.label}`}>
                 {/* Add any additional content for the checkbox label if needed */}

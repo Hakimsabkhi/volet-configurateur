@@ -51,6 +51,7 @@ function CouleurVolet() {
           onChange={() => {}} // Add an empty onChange handler if needed
           aria-labelledby={`label-${colorName}-${category}`} // Use the correct ID here
           className='ColorInput'
+          required
         />
         <label
           id={`label-${colorName}-${category}`} // Use the correct ID here

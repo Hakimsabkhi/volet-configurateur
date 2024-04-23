@@ -5,7 +5,7 @@ import LameEtDimension from './steps/LameEtdimension'; // Corrected spelling
 import CouleurVolet from './steps/couleurVolet';
 import TypeDePose from './steps/typeDePose';
 import MultiStepInfoDisplay from './MultiStepInfoDisplay';
-import dimensionCostCalculator from './calculator/dimensionCostCalculator'; // Corrected spelling
+import DimensionCostCalculator from './calculator/dimensionCostCalculator'; // Corrected spelling
 import Information from './formulaire/info'; // Consistent naming
 
 function MultiStepMenu({ onSelectionsChange }) {
@@ -96,7 +96,7 @@ function MultiStepMenu({ onSelectionsChange }) {
       </div>
       {showInformation && <Information onClose={toggleInformationDisplay} />}
       <div>
-        <dimensionCostCalculator />
+        <DimensionCostCalculator />
       </div>
     </div>
   );
