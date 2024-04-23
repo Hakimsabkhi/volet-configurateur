@@ -1,11 +1,11 @@
-import React from 'react'
-import { useDispatch, useSelector } from 'react-redux'
-import { setColor } from '../../features/voletSlice'
-import './couleurVolet.css' // Ensure your CSS styles are updated accordingly
+import React, { useEffect } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import { setColor } from '../../features/voletSlice';
+import './couleurVolet.css';
 
-function CouleurVolet() {
-  const dispatch = useDispatch()
-  const selectedColors = useSelector((state) => state.volet.selectedColor)
+function CouleurVolet({ enableNextButton }) {
+  const dispatch = useDispatch();
+  const selectedColors = useSelector((state) => state.volet.selectedColor);
 
   const colorOptions = {
     coulisse: {
@@ -32,14 +32,20 @@ function CouleurVolet() {
       'Marron': '#8b4513',
       'Chêne-doré': '#daa520'
     }
-  }
+  };
+
+  useEffect(() => {
+    // Check if all categories have a selected color to enable the next step button
+    const allSelected = Object.keys(colorOptions).every(category => selectedColors[category] && selectedColors[category] !== '');
+    enableNextButton(allSelected);
+  }, [selectedColors, enableNextButton]);
 
   const handleColorSelection = (colorName, category) => {
-    dispatch(setColor({ color: colorName, category }))
-  }
+    dispatch(setColor({ color: colorName, category }));
+  };
 
   const renderColorChoices = (category) => {
-    const colors = colorOptions[category] || {}
+    const colors = colorOptions[category] || {};
     return Object.entries(colors).map(([colorName, colorCode]) => (
       <div key={`${category}-${colorName}`} className={`color-choice ${colorName === selectedColors[category] ? 'selected' : ''}`} onClick={() => handleColorSelection(colorName, category)} style={{ cursor: 'pointer', padding: '10px', marginBottom: '10px', textAlign: 'center' }}>
         <input
@@ -48,25 +54,22 @@ function CouleurVolet() {
           name={`color-${category}`}
           value={colorName}
           checked={colorName === selectedColors[category]}
-          onChange={() => {}} // Add an empty onChange handler if needed
-          aria-labelledby={`label-${colorName}-${category}`} // Use the correct ID here
+          onChange={() => {}} // No action needed on change as the click handler takes care of it
+          aria-labelledby={`label-${colorName}-${category}`}
           className='ColorInput'
           required
         />
         <label
-          id={`label-${colorName}-${category}`} // Use the correct ID here
+          id={`label-${colorName}-${category}`}
           htmlFor={`${colorName}-${category}`}
-          /* className={colorName === selectedColors[category] ? 'selected color-label' : 'color-label'} */
           className={`color-label ${colorName === selectedColors[category] ? 'selected' : ''}`}
           style={{ backgroundColor: colorCode }}></label>
-
-        {/* Displaying color name and code */}
         <div style={{ marginTop: '5px' }}>
           <span>{colorName.replace(/-/g, ' ')}</span>
         </div>
       </div>
-    ))
-  }
+    ));
+  };
 
   return (
     <div>
@@ -77,7 +80,7 @@ function CouleurVolet() {
       <h2>Couleur Lame Finale</h2>
       <div className="colors-row">{renderColorChoices('lameFinale')}</div>
     </div>
-  )
+  );
 }
 
-export default CouleurVolet
+export default CouleurVolet;

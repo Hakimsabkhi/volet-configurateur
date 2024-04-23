@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { setInstallationType, selectInstallationType } from '../../features/voletSlice';
 import Image1 from '../../assets/sous-lanto.png';
@@ -6,7 +6,7 @@ import Image2 from '../../assets/en-inverse.png';
 import Image3 from '../../assets/en-applique.png';
 import "./typeDePose.css"
 
-function TypeDePose() {
+function TypeDePose({ enableNextButton }) {
   const dispatch = useDispatch();
   const installationType = useSelector(selectInstallationType);
 
@@ -16,14 +16,13 @@ function TypeDePose() {
     { label: 'En applique', description: 'Coffre pan coupé ou quart de rond aluminium differentes couleurs', image: Image3 }
   ];
 
-  const handleChoice = (choice, index) => {
-    dispatch(setInstallationType(choice.label));
-    // Additional logic for handling the choice can be included here
-  };
+  useEffect(() => {
+    // Enable the next step button only if an installation type has been selected
+    enableNextButton(installationType !== '');
+  }, [installationType, enableNextButton]);
 
-  const handleCheckboxChange = (choice) => {
+  const handleChoice = (choice) => {
     dispatch(setInstallationType(choice.label));
-    // Additional logic for handling the checkbox change can be included here
   };
 
   return (
@@ -39,12 +38,10 @@ function TypeDePose() {
                 className="hidden-checkbox"
                 checked={choice.label === installationType}
                 id={`checkbox-${choice.label}`}
-                onChange={() => handleCheckboxChange(choice)}
+                onChange={() => handleChoice(choice)} // Simplify change handling
                 required
               />
-              <label htmlFor={`checkbox-${choice.label}`}>
-                {/* Add any additional content for the checkbox label if needed */}
-              </label>
+              <label htmlFor={`checkbox-${choice.label}`}></label>
             </div>
             <p className="choice-description">{choice.description}</p>
           </div>

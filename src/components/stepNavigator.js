@@ -1,16 +1,19 @@
 import React from 'react';
-import '../styles.css'
+import '../styles.css';
 
-function StepNavigator({ currentStep, setCurrentStep, totalSteps, titles }) {
+function StepNavigator({ currentStep, setCurrentStep, totalSteps, titles, enabledSteps }) {
   return (
     <div className="step-navigator">
       {[...Array(totalSteps)].map((_, index) => {
         const stepNumber = index + 1;
+        // Determine if the step is enabled from the enabledSteps object
+        const isStepEnabled = enabledSteps[stepNumber];
         return (
           <button
             key={stepNumber}
-            className={`step-button ${currentStep === stepNumber ? 'active' : ''}`}
-            onClick={() => setCurrentStep(stepNumber)}
+            className={`step-button ${currentStep === stepNumber ? 'active' : ''} ${!isStepEnabled ? 'disabled' : ''}`}
+            onClick={() => isStepEnabled && setCurrentStep(stepNumber)}
+            disabled={!isStepEnabled} // Disable button if step is not enabled
           >
             {titles[stepNumber]}
           </button>
@@ -19,6 +22,5 @@ function StepNavigator({ currentStep, setCurrentStep, totalSteps, titles }) {
     </div>
   );
 }
-
 
 export default StepNavigator;
