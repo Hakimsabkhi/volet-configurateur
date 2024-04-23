@@ -14,6 +14,9 @@
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
+.total-cost{
+  width: 450px;
+}
 .presouscost{
   display: flex;
   justify-content: space-around;
@@ -29,8 +32,7 @@
 .cost-calculator-cost {
   color: #ffffff;
   text-align: center;
-  margin-top: 15px;
-  font-size: 20px;
+  font-size: 31px;
 }
 
 .multiplier-controls {

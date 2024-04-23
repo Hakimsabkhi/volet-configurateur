@@ -15,7 +15,7 @@ const Root = () => {
   useEffect(() => {
     const timer = setTimeout(() => {
       setLoading(false);
-    }, 5000); // This timer controls the display of the loading screen
+    }, 7000); // This timer controls the display of the loading screen
     return () => clearTimeout(timer);
   }, []);
 

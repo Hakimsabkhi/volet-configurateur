@@ -33,6 +33,7 @@ function DimensionCostCalculator() {
 
   return (
     <div className="cost-calculator-container">
+      <div className="total-cost"><h3 className="cost-calculator-cost">Prix Total TTC: {costTotalTTC} €</h3></div>    
       <div className="presouscost">
         <div>
           <h2 className="cost-calculator-detail">Prix unitaire HT : {costHT} €</h2>
@@ -51,7 +52,6 @@ function DimensionCostCalculator() {
           </div>
         </div>
       </div>
-      <h3 className="cost-calculator-cost">Prix Total TTC: {costTotalTTC} €</h3>
       {/* Removed "Obtenir un devis" button */}
       {showInformation && <Information />} {/* Conditionally render the Information component */}
     </div>
