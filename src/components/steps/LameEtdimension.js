@@ -4,10 +4,10 @@ import { useDispatch, useSelector } from 'react-redux' // Hooks for interacting 
 import { setLameSelection, setDimensions } from '../../features/voletSlice' // Action creators from the Redux slice.
 import Lame41Image from '../../assets/lame-41.png' // Image asset for "Lame 41".
 import Lame55Image from '../../assets/lame-55.png' // Image asset for "Lame 55".
-import './LameEtDimention.css' // Styles specific to this component.
+import './LameEtdimension.css' // Styles specific to this component.
 
 // The functional component declaration with destructured prop for handling selection change.
-function LameEtDimention() {
+function LameEtdimension() {
   const dispatch = useDispatch() // Hook to dispatch actions to the Redux store.
   const lameSelection = useSelector((state) => state.volet.lameSelection) // Retrieves the current lame selection from the Redux store.
   const dimensions = useSelector((state) => state.volet.dimensions) // Retrieves the current dimensions from the Redux store.
@@ -39,7 +39,7 @@ function LameEtDimention() {
 
   // Render method returns JSX for the component UI.
   return (
-    <div className='LameetDimention'>
+    <div className='Lameetdimension'>
       <div className="choices-container">
         {choices.map((lameChoice, index) => (
           <label key={index} onClick={() => handleLameChoice(lameChoice)} className={`choice-btn ${lameChoice.label === lameSelection ? 'selected' : ''}`}>
@@ -47,7 +47,7 @@ function LameEtDimention() {
             <div className="details">
               <div className="sous-details">
                 <h2 className="choice-label">{lameChoice.label}</h2>
-                <input type="checkbox" id={`checkbox-${lameChoice.label}`} name={`checkbox-${lameChoice.label}`} checked={lameSelection === lameChoice.label} onChange={() => handleLameChoice(lameChoice)} className="choice-checkbox" />
+                <input type="checkbox" id={`checkbox-${lameChoice.label}`} name={`checkbox-${lameChoice.label}`} checked={lameSelection === lameChoice.label} onChange={() => handleLameChoice(lameChoice)} className="choice-checkbox" required />
               </div>
               <p className="choice-description">{lameChoice.description}</p>
             </div>
@@ -55,7 +55,7 @@ function LameEtDimention() {
         ))}
       </div>
 
-      <div className="DimentionSection">
+      <div className="dimensionSection">
         <div className="dimension-input-container">
           {/* Input for "Largeur" dimension with dynamic max value based on lame selection. */}
           <h2 htmlFor="Largeur">Largeur en mm (min: 600 mm - max: {lameSelection === 'Lame 41' ? 3000 : 3500}):</h2>
@@ -71,4 +71,4 @@ function LameEtDimention() {
   )
 }
 
-export default LameEtDimention // Exporting the component for use in other parts of the application.
+export default LameEtdimension // Exporting the component for use in other parts of the application.
