@@ -209,6 +209,11 @@ svg {
   height: 30px;
 }
 
+.step-button:hover {
+  background-color: rgb(115, 255, 1);
+  color: #000;
+}
+
 .step-button.active {
   background-color: #ffffff;
   color: #000;

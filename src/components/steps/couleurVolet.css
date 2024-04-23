@@ -9,7 +9,7 @@
   align-items: center;
   padding: 5px;
   margin-right: 5px;
-  background-color: rgb(68, 50, 110);
+  background-color: rgba(94, 197, 238, 0.644);
   width: 66px;
   text-align: center;
   font-size: 10px;
@@ -23,7 +23,7 @@
 }
 
 .color-choice:hover {
-  background-color: rgb(255, 255, 255);
+  background-color: rgb(115, 255, 1);
   color: #000;
 }
 

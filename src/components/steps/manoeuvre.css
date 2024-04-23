@@ -17,26 +17,30 @@
 
 .ma-btn {
   display: flex;
-  background-color: rgb(68, 50, 110);
-  border: 2px solid rgb(68, 50, 110);
+  background-color: rgba(94, 197, 238, 0.644);
+  border: 2px solid rgba(255, 255, 255, 0.644);
   border-radius: 5px;
   width: 200px;
   height: 38px
-  
+}
+
+.ma-btn:hover {
+  background-color: rgb(115, 255, 1);
+  color: #000;
 }
 
 .INTERRUPTEUR-btn.selected  {
   color: rgb(0, 0, 0); /* This will change the text color to blue when selected */
   background-color: #ffffff;
-  border: 2px solid rgb(68, 50, 110);
+  border: 2px solid rgba(94, 197, 238, 0.644);
 
 }
 
 .INTERRUPTEUR-btn {
   width: 130px;
   
-    background-color: rgb(68, 50, 110);
-    border: 2px solid rgb(68, 50, 110);
+    background-color: rgba(94, 197, 238, 0.644);
+    border: 2px solid rgba(94, 197, 238, 0.644);
     border-radius: 5px;
   
   }
@@ -64,7 +68,7 @@
   display: flex;
   justify-content: center;
   gap: 10px;
-  background-color: rgb(68, 50, 110);
+  background-color: rgba(94, 197, 238, 0.644);
   border: none;
   border-radius: 5px;
 }
