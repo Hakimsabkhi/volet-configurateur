@@ -84,7 +84,7 @@ function Viewer({ setPosition, setTarget }) {
         apiClient.stop();
       }
     };
-  }, [setPosition, setTarget, userInteractionEnabled]);
+  }, [setPosition, setTarget]);
 
   // Manage blur timeout
   useEffect(() => {
