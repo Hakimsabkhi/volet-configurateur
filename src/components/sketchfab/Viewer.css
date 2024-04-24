@@ -2,7 +2,7 @@
 .viewer-container {
   position: relative;
   width: 100%; /* Adjust the width as needed */
-  height: 700px; /* Adjust the height as needed */
+  height: 100%; /* Adjust the height as needed */
 }
 
 #sketchfab-viewer {

@@ -11,7 +11,7 @@ function App() {
   return (
     <div className='canvasStyle'>
       <Viewer setPosition={setPosition} setTarget={setTarget} />
-      <CameraControl position={position} setPosition={setPosition} target={target} setTarget={setTarget} />
+    {/*   <CameraControl position={position} setPosition={setPosition} target={target} setTarget={setTarget} /> */}
     </div>
   );
 }
