@@ -1,9 +1,12 @@
 import React, { useEffect, useState } from 'react';
 import './Viewer.css';
+import logo from '../../assets/logo.svg';
 
 function Viewer({ setPosition, setTarget }) {
   const [apiClient, setApiClient] = useState(null);
-  const [userInteractionEnabled, setUserInteractionEnabled] = useState(false); // Directly manage user interaction state
+  const [userInteractionEnabled, setUserInteractionEnabled] = useState(false);
+  const [isBlurred, setIsBlurred] = useState(true);  // State to control the blur effect
+  const [progress, setProgress] = useState(0);  // State to control the progress bar
 
   useEffect(() => {
     const iframe = document.getElementById('sketchfab-viewer');
@@ -31,8 +34,16 @@ function Viewer({ setPosition, setTarget }) {
             const updateCameraDetails = () => {
               api.getCameraLookAt((err, cameraLookAt) => {
                 if (!err) {
-                  setPosition({ x: cameraLookAt.position[0], y: cameraLookAt.position[1], z: cameraLookAt.position[2] });
-                  setTarget({ x: cameraLookAt.target[0], y: cameraLookAt.target[1], z: cameraLookAt.target[2] });
+                  setPosition({
+                    x: cameraLookAt.position[0], 
+                    y: cameraLookAt.position[1], 
+                    z: cameraLookAt.position[2]
+                  });
+                  setTarget({
+                    x: cameraLookAt.target[0], 
+                    y: cameraLookAt.target[1], 
+                    z: cameraLookAt.target[2]
+                  });
                 }
               });
             };
@@ -66,13 +77,30 @@ function Viewer({ setPosition, setTarget }) {
       console.error('Sketchfab API script not loaded');
     }
 
+    // Cleanup function for useEffect
     return () => {
       clearInterval(intervalId);
       if (apiClient) {
         apiClient.stop();
       }
     };
-  }, [setPosition, setTarget]);
+  }, [setPosition, setTarget, userInteractionEnabled]);
+
+  // Manage blur timeout
+  useEffect(() => {
+    const blurTimeout = setTimeout(() => {
+      setIsBlurred(false);
+    }, 10000);
+
+    const progressInterval = setInterval(() => {
+      setProgress(prevProgress => (prevProgress >= 100 ? 100 : prevProgress + 5));
+    }, 500);
+
+    return () => {
+      clearTimeout(blurTimeout);
+      clearInterval(progressInterval);
+    };
+  }, []);
 
   function toggleUserInteraction() {
     if (apiClient) {
@@ -102,7 +130,15 @@ function Viewer({ setPosition, setTarget }) {
 
   return (
     <div className="viewer-container">
-      <iframe id="sketchfab-viewer"></iframe>
+      <iframe id="sketchfab-viewer" className={isBlurred ? 'blurred' : ''}></iframe>
+      {isBlurred && (
+        <div className="loading-Viewer">
+          <img src={logo} alt="Loading..." />
+          <div className="progress">
+            <div className="progress-bar" style={{ width: `${progress}%` }}></div>
+          </div>
+        </div>
+      )}
       <div className="overlay-buttons">
         <button style={{ width: '100px', height: '100px', margin: '5px' }} onClick={() => handleViewChange([-9.93, 6.88, 1.96], [-6.29, 2.11, 1.97])}>Outside View</button>
         <button style={{ width: '100px', height: '100px', margin: '5px' }} onClick={() => handleViewChange([-1.47, -1.74, 1.56], [-5.12, 3.01, 1.56])}>Inside View</button>
@@ -110,6 +146,7 @@ function Viewer({ setPosition, setTarget }) {
       </div>
     </div>
   );
+  
 }
 
 export default Viewer;
