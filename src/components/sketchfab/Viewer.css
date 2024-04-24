@@ -51,7 +51,7 @@
 .loading-Viewer .progress {
   width: 200px; /* Adjust width as necessary */
   height: 10px;
-  background-color: #ffffff;
+  background-color: rgba(10, 10, 10, 0.2);
   overflow: hidden;
   position: relative;
 }
