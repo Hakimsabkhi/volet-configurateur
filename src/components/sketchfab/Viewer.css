@@ -40,6 +40,7 @@
   justify-content: center;
   background: rgba(255, 255, 255, 0.5); /* Optional: semi-transparent white background */
   z-index: 20; /* Ensures it is above the iframe */
+  transition: filter 1s ease-out;
 }
 
 .loading-Viewer img {
