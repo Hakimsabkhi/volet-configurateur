@@ -11,11 +11,11 @@ function LameEtdimension({ enableNextButton }) {
   const dimensions = useSelector(state => state.volet.dimensions);
 
   useEffect(() => {
-    // Enable the next button only if a lame type is selected and both dimensions are valid
     const isEnabled = lameSelection !== '' && dimensions.Largeur >= 600 && dimensions.Hauteur >= 600;
+    console.log(`Enabling button: ${isEnabled}`); // Add debugging log
     enableNextButton(isEnabled);
-  }, [lameSelection, dimensions, enableNextButton]);
-
+  }, [lameSelection, dimensions]); // Remove enableNextButton from dependencies
+  
   const handleLameChoice = (lameChoice) => {
     dispatch(setLameSelection(lameChoice.label));
   };

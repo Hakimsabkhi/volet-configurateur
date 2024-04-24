@@ -35,10 +35,10 @@ function CouleurVolet({ enableNextButton }) {
   };
 
   useEffect(() => {
-    // Check if all categories have a selected color to enable the next step button
     const allSelected = Object.keys(colorOptions).every(category => selectedColors[category] && selectedColors[category] !== '');
     enableNextButton(allSelected);
-  }, [selectedColors, enableNextButton]);
+  }, [selectedColors]); // Temporarily remove enableNextButton
+  
 
   const handleColorSelection = (colorName, category) => {
     dispatch(setColor({ color: colorName, category }));

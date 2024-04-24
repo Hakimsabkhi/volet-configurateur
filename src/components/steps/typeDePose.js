@@ -17,9 +17,10 @@ function TypeDePose({ enableNextButton }) {
   ];
 
   useEffect(() => {
-    // Enable the next step button only if an installation type has been selected
+    console.log("useEffect Triggered: ", { installationType });
     enableNextButton(installationType !== '');
-  }, [installationType, enableNextButton]);
+  }, [installationType]); // Remove enableNextButton from dependencies for testing
+  
 
   const handleChoice = (choice) => {
     dispatch(setInstallationType(choice.label));
