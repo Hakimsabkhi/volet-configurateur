@@ -1,11 +1,9 @@
 import React from 'react';
 import OptionSelector from './OptionSelector';
+import { commandeOptions } from '../../../assets/Data';
+
 
 const CommandeSelector = ({ selectedOption, handleChange }) => {
-  const commandeOptions = [
-    { label: 'Emetteur mural', description: 'Interrupteur encastré', image: '../../assets/Encastree.png' },
-    { label: 'Télécommande', description: 'Interrupteur en applique', image: '../../assets/EnApplique.png' }
-  ];
 
   return (
     <OptionSelector

@@ -9,6 +9,7 @@ import InterrupteurSelector from './Manoeuvre/InterrupteurSelector'
 import SortieDeCableSelector from './Manoeuvre/SortieDeCableSelector'
 import OptionSelector from './Manoeuvre/OptionSelector'
 import './manoeuvre.css'
+import { ControlOptions } from '../../assets/Data'
 
 function Manoeuvre({ enableNextButton }) {
   const dispatch = useDispatch()
@@ -35,13 +36,10 @@ function Manoeuvre({ enableNextButton }) {
   const handleChange = (setType) => (option) => {
     dispatch(setType(option.label))
   }
-  const choices = [
-    { label: 'Manuel', description: 'Fonctionne par une commande manuelle.', image: '../../assets/manuel.png' },
-    { label: 'Motorisé', description: 'Actionné électriquement', image: '../../assets/moteur-beker.png' }
-  ]
+
   return (
     <div className="ma-container">
-      <OptionSelector options={choices} selectedOption={ManoeuvreType} handleChange={handleChange(setManoeuvreType)} type="choice" />
+      <OptionSelector options={ControlOptions} selectedOption={ManoeuvreType} handleChange={handleChange(setManoeuvreType)} type="choice" />
       {ManoeuvreType === 'Manuel' && (
         <>
           <h2 className="text">Outil De Commande</h2>

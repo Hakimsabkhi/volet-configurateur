@@ -1,11 +1,8 @@
 import React from 'react';
 import OptionSelector from './OptionSelector';
+import { telecommandeOptions } from '../../../assets/Data';
 
 const TelecommandeSelector = ({ selectedOption, handleChange }) => {
-  const telecommandeOptions = [
-    { label: 'Sans', description: 'Sans télécommande', image: '../../assets/Encastree.png' },
-    { label: 'Avec', description: 'Avec télécommande', image: '../../assets/EnApplique.png' }
-  ];
 
   return (
     <OptionSelector

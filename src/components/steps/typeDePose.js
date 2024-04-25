@@ -1,10 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { setInstallationType, selectInstallationType } from '../../features/voletSlice';
-import Image1 from '../../assets/sous-lanto.png';
-import Image2 from '../../assets/en-inverse.png';
-import Image3 from '../../assets/en-applique.png';
 import "./typeDePose.css";
+
+import { PoseOptions } from '../../assets/Data'
 
 function TypeDePose({ enableNextButton }) {
   const dispatch = useDispatch();
@@ -12,11 +11,7 @@ function TypeDePose({ enableNextButton }) {
   const [hoveredChoice, setHoveredChoice] = useState(null);
   const [popupPosition, setPopupPosition] = useState({ top: 0, left: 0 });
 
-  const choices = [
-    { label: 'sous lanteau', description: 'Coffre pan coupé ou quart de rond aluminium differentes couleurs', image: Image1 },
-    { label: 'sous lanteau inverse', description: 'Coffre pan coupé ou quart de rond aluminium differentes couleurs', image: Image2 },
-    { label: 'En applique', description: 'Coffre pan coupé ou quart de rond aluminium differentes couleurs', image: Image3 }
-  ];
+
 
   useEffect(() => {
     console.log("useEffect Triggered: ", { installationType });
@@ -31,8 +26,8 @@ function TypeDePose({ enableNextButton }) {
 
   return (
     <div className="container">
-      <div className="choices-container">
-        {choices.map((choice) => (
+      <div className="PoseOptions-container">
+        {PoseOptions.map((choice) => (
           <label key={choice.label} className={`choice-btn ${choice.label === installationType ? "selected" : ""}`} onMouseEnter={(e) => handleMouseEnter(e, choice)} onMouseLeave={() => setHoveredChoice(null)}>
             <img src={choice.image} alt={choice.label} className="button-image" />
             <div className='details'>

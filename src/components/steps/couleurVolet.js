@@ -2,37 +2,11 @@ import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { setColor } from '../../features/voletSlice';
 import './couleurVolet.css';
+import { colorOptions } from '../../assets/Data'
 
 function CouleurVolet({ enableNextButton }) {
   const dispatch = useDispatch();
   const selectedColors = useSelector((state) => state.volet.selectedColor);
-
-  const colorOptions = {
-    coulisse: {
-      'Blanc': '#ffffff',
-      'Gris-clair': '#d3d3d3',
-      'Gris-métallique': '#808080',
-      'Gris-anthracite': '#333333',
-      'Marron': '#8b4513',
-      'Chêne-doré': '#daa520'
-    },
-    tablier: {
-      'Blanc': '#ffffff',
-      'Gris-clair': '#d3d3d3',
-      'Gris-métallique': '#808080',
-      'Gris-anthracite': '#333333',
-      'Marron': '#8b4513',
-      'Chêne-doré': '#daa520'
-    },
-    lameFinale: {
-      'Blanc': '#ffffff',
-      'Gris-clair': '#d3d3d3',
-      'Gris-métallique': '#808080',
-      'Gris-anthracite': '#333333',
-      'Marron': '#8b4513',
-      'Chêne-doré': '#daa520'
-    }
-  };
 
   useEffect(() => {
     const allSelected = Object.keys(colorOptions).every(category => selectedColors[category] && selectedColors[category] !== '');
