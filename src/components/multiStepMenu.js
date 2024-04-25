@@ -92,7 +92,7 @@ function MultiStepMenu({ onSelectionsChange }) {
           <h2>{steps.find(step => step.id === currentStep)?.title}</h2>
           {renderCurrentStep()}
         </div>
-        <div className="container">
+        <div className="NavBtnContainer">
         {currentStep > 1 && currentStep < steps.length && (
             <button onClick={previousStep} className="nav-btn previous">
               Étape Précédente

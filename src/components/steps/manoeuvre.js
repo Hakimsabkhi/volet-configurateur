@@ -16,7 +16,6 @@ function Manoeuvre({ enableNextButton }) {
 
   useEffect(() => {
     let isEnabled = false
-
     // Check if the base ManoeuvreType has been selected
     if (ManoeuvreType === 'Manuel') {
       isEnabled = ManualType !== '' // Ensure a manual type has been selected
@@ -30,20 +29,16 @@ function Manoeuvre({ enableNextButton }) {
         }
       }
     }
-
     // Call the enableNextButton with the resolved isEnabled status
     enableNextButton(isEnabled)
   }, [ManoeuvreType, ManualType, MotoriseType, TelecommandeType, InterrupteurType, SortieDeCableType])
-
   const handleChange = (setType) => (option) => {
     dispatch(setType(option.label))
   }
-
   const choices = [
     { label: 'Manuel', description: 'Fonctionne par une commande manuelle.', image: '../../assets/manuel.png' },
-    { label: 'Motorisé', description: 'Actionné électriquement', image: '../../assets/motorise.png' }
+    { label: 'Motorisé', description: 'Actionné électriquement', image: '../../assets/moteur-beker.png' }
   ]
-
   return (
     <div className="ma-container">
       <OptionSelector options={choices} selectedOption={ManoeuvreType} handleChange={handleChange(setManoeuvreType)} type="choice" />
@@ -76,5 +71,4 @@ function Manoeuvre({ enableNextButton }) {
     </div>
   )
 }
-
 export default Manoeuvre

@@ -1,7 +1,8 @@
 .ma-container {
+  width: 410px;
   display: flex;
   justify-content: center;
-  gap: 10px ;
+  gap: 10px;
   flex-wrap: wrap;
   margin-top: 2px;
 }

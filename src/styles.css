@@ -186,7 +186,7 @@ svg {
   margin-top: 20px;
   width: 430px;
   display: flex;
-  justify-content: flex-end;
+  justify-content: center;
 }
 
 .step-navigator {
@@ -413,4 +413,10 @@ body {
 @keyframes fade {
   0% { opacity: 0; }
   100% { opacity: 1; }
+}
+
+.NavBtnContainer {
+  width: 430px;
+  display: flex;
+  justify-content: end;
 }

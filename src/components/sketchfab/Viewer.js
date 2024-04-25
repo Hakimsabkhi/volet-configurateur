@@ -7,7 +7,8 @@ function Viewer({ setPosition, setTarget }) {
   const [userInteractionEnabled, setUserInteractionEnabled] = useState(false);
   const [isBlurred, setIsBlurred] = useState(true);  // State to control the blur effect
   const [progress, setProgress] = useState(0);  // State to control the progress bar
-
+  const [nodes, setNodes] = useState([]);  // State to store the nodes
+  
   useEffect(() => {
     const iframe = document.getElementById('sketchfab-viewer');
     let intervalId = null;
@@ -50,6 +51,7 @@ function Viewer({ setPosition, setTarget }) {
 
             updateCameraDetails();
             intervalId = setInterval(updateCameraDetails, 5000);
+            getNodeMap(api);
           });
         },
         error: () => console.error('Sketchfab API failed to initialize'),
@@ -85,6 +87,17 @@ function Viewer({ setPosition, setTarget }) {
       }
     };
   }, [setPosition, setTarget]);
+
+  function getNodeMap(api) {
+    api.getNodeMap((err, nodes) => {
+      if (!err) {
+        console.log('Node map retrieved:', nodes);
+        setNodes(nodes);
+      } else {
+        console.error('Failed to get node map:', err);
+      }
+    });
+  }
 
   // Manage blur timeout
   useEffect(() => {
