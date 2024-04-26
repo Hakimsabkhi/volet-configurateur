@@ -21,7 +21,7 @@ const Root = () => {
 
   return (
     <Provider store={store}>
-        <div style={{ display: loading ? 'none' : 'flex' , 'gap' : '15px', 'marginRight': '20px' , 'marginTop': '20px', 'marginLeft': '20px'}}>
+        <div className='MainStyle' style={{ display: loading ? 'none' : 'flex'}}>
           <MultiStepMenu />
           <App />
         </div>

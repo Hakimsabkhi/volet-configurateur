@@ -38,7 +38,7 @@ function Manoeuvre({ enableNextButton }) {
   }
 
   return (
-    <div className="ma-container">
+    <div className="ma-containerG">
       <OptionSelector options={ControlOptions} selectedOption={ManoeuvreType} handleChange={handleChange(setManoeuvreType)} type="choice" />
       {ManoeuvreType === 'Manuel' && (
         <>

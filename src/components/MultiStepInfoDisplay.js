@@ -102,7 +102,7 @@ const MultiStepInfoDisplay = () => {
           )}
         </tbody>
       </table>
-      <table style={{ marginTop: '10px', width: '205px', textAlign: 'right', marginLeft: 'auto', marginRight: '0' }}>
+      <table style={{ width: '205px', textAlign: 'right', marginLeft: 'auto', marginRight: '0' }}>
         <tbody>
         <tr>
             <th>Total HT</th>

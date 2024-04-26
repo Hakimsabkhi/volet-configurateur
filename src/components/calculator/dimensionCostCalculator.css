@@ -7,7 +7,6 @@
   font-size: 15px;
   font-weight: bold;
   align-items: center;
-  width: 450px;
   padding: 10px;
   background-color: rgb(12, 17, 63); /* Semi-transparent background */
   border-radius: 8px;
@@ -15,12 +14,13 @@
 }
 
 .total-cost{
-  width: 450px;
+  width: 400px;
 }
 .presouscost{
   display: flex;
+  gap: 10px;
   justify-content: space-around;
-  width: 450px;
+  width: 100%;
   }
 
 .cost-calculator-header {
@@ -32,7 +32,6 @@
 .cost-calculator-cost {
   color: #ffffff;
   text-align: center;
-  font-size: 31px;
 }
 
 .multiplier-controls {
@@ -43,7 +42,6 @@
 }
 
 .multiplier-controls button {
-  padding: 5px 10px;
   background-color: #ffffff;
   border: none;
   border-radius: 5px;
@@ -63,16 +61,11 @@
   font-size: 18px;
   color: #fff; /* White color for better visibility against the background */
 }
-.cost-calculator-container h2 {
-
-  font-size: 14px;
-}
-
 
 
 .nav-btn {
   padding: 10px 20px;
-  margin: 0px 5px;
+
   border: none;
   border-radius: 5px;
   background-color: rgba(94, 197, 238, 0.644);

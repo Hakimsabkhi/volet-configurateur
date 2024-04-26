@@ -31,7 +31,9 @@ function Information({ onClose }) {
 
   return (
     <form className='formeBox' onSubmit={handleSubmit}>
+      <div className='divBut'>
       <button type="button" className="closeButton" onClick={handleClose}>X</button>
+      </div>
         <div className="section secondSection">
           <label htmlFor="fullNameOrCompany">Nom complet ou Société</label>
           <input className="label-class" type="text" id="fullNameOrCompany" name="fullNameOrCompany" value={formData.fullNameOrCompany} onChange={handleChange} />

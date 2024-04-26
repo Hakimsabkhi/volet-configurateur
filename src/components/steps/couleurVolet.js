@@ -21,7 +21,7 @@ function CouleurVolet({ enableNextButton }) {
   const renderColorChoices = (category) => {
     const colors = colorOptions[category] || {};
     return Object.entries(colors).map(([colorName, colorCode]) => (
-      <div key={`${category}-${colorName}`} className={`color-choice ${colorName === selectedColors[category] ? 'selected' : ''}`} onClick={() => handleColorSelection(colorName, category)} style={{ cursor: 'pointer', padding: '10px', marginBottom: '10px', textAlign: 'center' }}>
+      <div key={`${category}-${colorName}`} className={`color-choice ${colorName === selectedColors[category] ? 'selected' : ''}`} onClick={() => handleColorSelection(colorName, category)} style={{ cursor: 'pointer', textAlign: 'center' }}>
         <input
           type="checkbox"
           id={`label-${colorName}-${category}`}
@@ -33,12 +33,12 @@ function CouleurVolet({ enableNextButton }) {
           className='ColorInput'
           required
         />
-        <label
+        {/* <label
           id={`label-${colorName}-${category}`}
           htmlFor={`${colorName}-${category}`}
           className={`color-label ${colorName === selectedColors[category] ? 'selected' : ''}`}
-          style={{ backgroundColor: colorCode }}></label>
-        <div style={{ marginTop: '5px' }}>
+          style={{ backgroundColor: colorCode }}></label> */}
+        <div>
           <span>{colorName.replace(/-/g, ' ')}</span>
         </div>
       </div>
@@ -46,7 +46,7 @@ function CouleurVolet({ enableNextButton }) {
   };
 
   return (
-    <div>
+    <div className='ColorBox'>
       <h2>Couleur Coulisse</h2>
       <div className="colors-row">{renderColorChoices('coulisse')}</div>
       <h2>Couleur Tablier</h2>
