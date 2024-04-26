@@ -153,9 +153,9 @@ function Viewer({ setPosition, setTarget }) {
         </div>
       )}
       <div className="overlay-buttons">
-        <button style={{ width: '100px', height: '100px', margin: '5px' }} onClick={() => handleViewChange([-9.93, 6.88, 1.96], [-6.29, 2.11, 1.97])}>Outside View</button>
-        <button style={{ width: '100px', height: '100px', margin: '5px' }} onClick={() => handleViewChange([-1.47, -1.74, 1.56], [-5.12, 3.01, 1.56])}>Inside View</button>
-        <button style={{ width: '100px', height: '100px', margin: '5px' }} onClick={toggleUserInteraction}>{userInteractionEnabled ? 'Disable Interaction' : 'Enable Interaction'}</button>
+        <button className='InteractionButton' onClick={() => handleViewChange([-9.93, 6.88, 1.96], [-6.29, 2.11, 1.97])}>Outside View</button>
+        <button className='InteractionButton' onClick={() => handleViewChange([-1.47, -1.74, 1.56], [-5.12, 3.01, 1.56])}>Inside View</button>
+        <button className='InteractionButton' onClick={toggleUserInteraction}>{userInteractionEnabled ? 'Disable Interaction' : 'Enable Interaction'}</button>
       </div>
     </div>
   );

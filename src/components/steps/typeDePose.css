@@ -2,7 +2,7 @@
   display: flex;
   flex-direction: column;
   gap: 10px;
-  width: fit-content;
+  width: 100%;
   position: relative; /* Add position relative here */
 }
 
@@ -71,5 +71,19 @@
   display: flex;
   flex-direction: column;
   gap: 10px;
-  width: fit-content;
+  width: 100%;
+}
+
+
+@media (max-width: 1050px) and (min-height: 800px) {
+  .choices-container {
+flex-direction:row;
+  }
+  .choice-btn {
+    width: 50%;
+  }
+
+  .PoseOptions-container {
+    flex-direction: row;
+  }
 }

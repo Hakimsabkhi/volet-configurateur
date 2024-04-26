@@ -10,6 +10,7 @@
 
 .color-choice {
   display: flex;
+  gap: 5px;
   flex-direction: column;
   justify-content: center; 
   text-align: center;
@@ -30,8 +31,8 @@
 }
 
 .color-label{
-  width: 50px;
-  height: 20px;
+  width: 30%;
+  height: 100%;
   vertical-align: middle;
   /* border: 2px solid #ddd; */
   border-radius: 2px;

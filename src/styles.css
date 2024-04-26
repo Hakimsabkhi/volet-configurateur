@@ -59,7 +59,6 @@ h2 {
   font-weight: bold;
 }
 
-
 p {
   font-size: 10px;
 }
@@ -120,7 +119,6 @@ svg {
   justify-content: space-between;
   padding: 10px;
   background-color: rgb(12, 17, 63); /* Semi-transparent background */
-  border-radius: 8px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   z-index: 1000;
   height: 100%;
@@ -146,7 +144,6 @@ svg {
   justify-content: center;
   padding: 10px;
   background-color: rgb(12, 17, 63); /* Semi-transparent background */
-  border-radius: 8px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   z-index: 1000;
 }
@@ -382,15 +379,14 @@ body {
 .NavBtnContainer {
   width: 100%;
   display: flex;
-  justify-content: end;
+  justify-content: flex-end;
   gap: 10px;
   padding-top: 10px;
 }
 
 .MainStyle {
-  height: 100%;
+  height: 94%;
   padding: 10px;
-  padding-bottom: 60px;
 }
 
 @media (max-width: 1349px) {
@@ -409,10 +405,6 @@ body {
   .multi-step-menu button.nav-btn {
     font-size: 12px;
   }
-  .button-image {
-    width: 50px;
-    height: 50px;
-}
 }
 
 @media (max-width: 1100px) {
@@ -430,8 +422,23 @@ body {
   h3 {
     font-size: 20px;
   }
-  .button-image {
-    width: 30px;
-    height: 30px;
 }
+
+@media (max-width: 1050px) and (min-height: 660px) {
+  .MainStyle {
+    flex-direction: column-reverse;
+    height: 98%;
+  }
+  .MenuGroupe {
+    gap: 1px;
+    width: 100%;
+    height: 40%;
+  }
+  .canvasStyle {
+    height: 65%;
+    width: 100%;
+  }
+  .Lameetdimension {
+    flex-direction: column;
+  }
 }

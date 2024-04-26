@@ -54,7 +54,7 @@ justify-content: center;
   display: flex;
   justify-content: space-around;
   flex-direction: column;
-  height: 100px;
+  height: 100%;
   font-size: 15px;
   font-weight: bold;
   align-items: center;
