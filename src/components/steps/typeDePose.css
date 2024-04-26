@@ -86,4 +86,10 @@ flex-direction:row;
   .PoseOptions-container {
     flex-direction: row;
   }
+  .popup-info {
+    display: none;
+  }
+  .sous-details {
+    gap: 0px;
+  }
 }

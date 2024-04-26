@@ -46,6 +46,16 @@
   gap: 5px; 
 }
 
-
+@media (max-width: 1050px) and (min-height: 800px) {
+.colors-row > * {
+  flex: 1 0 30%; /* Each item has a basis of 30% of the container width */}
+  .ColorBox {
+    flex-direction: row;
+  }
+  .i {
+    border-bottom: 2px solid white; /* Adjust the thickness and color as needed */
+    margin-bottom: 10px; /* Optional: Adjust the space below the border */
+  }
+}
 
 

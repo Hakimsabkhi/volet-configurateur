@@ -74,3 +74,22 @@
 }
 
 
+@media (max-width: 1050px) and (min-height: 660px) {
+  
+.InteractionButton {
+  width: 100px;
+  height: 40px;
+}
+.overlay-buttons {
+  top: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+  justify-content: center;
+}
+
+}
+
+
