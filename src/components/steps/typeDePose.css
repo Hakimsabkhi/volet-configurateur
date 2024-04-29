@@ -1,4 +1,4 @@
-.choices-container {
+.LameChoices-container {
   display: flex;
   flex-direction: column;
   gap: 10px;
@@ -76,7 +76,7 @@
 
 
 @media (max-width: 1050px) and (min-height: 800px) {
-  .choices-container {
+  .LameChoices-container {
 flex-direction:row;
   }
   .choice-btn {

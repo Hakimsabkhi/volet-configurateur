@@ -1,4 +1,4 @@
-import { Filaire, Radio ,Droite, Gauche , Manuel, MoteurBeker, SousLanteau , SousLanteauInverse, EnApplique, AppliqueEncastre, AppliqueEnApplique, Sangle, Manivelle} from './imageModule'
+import { Filaire, Radio ,Droite, Gauche , Manuel, MoteurBeker, SousLanteau , SousLanteauInverse, EnApplique, AppliqueEncastre, AppliqueEnApplique, Sangle, Manivelle , Lame41Image, Lame55Image } from './imageModule'
 
 const motoriseOptions = [
   { label: 'Filaire', description: 'Description for Motorisé 1', image: Filaire },
@@ -43,6 +43,11 @@ const PoseOptions = [
   { label: 'En applique', description: 'Coffre pan coupé ou quart de rond aluminium differentes couleurs', image: EnApplique }
 ];
 
+const LameChoices = [
+  { label: 'Lame 41', description: 'Lames en Aluminium plié et injectées de mousse isolante.', image: Lame41Image },
+  { label: 'Lame 55', description: 'Lame volet roulant aluminium isolée 55x14.', image: Lame55Image }
+]
+
 const colorOptions = {
   coulisse: {
     'Blanc': '#ffffff',
@@ -70,4 +75,4 @@ const colorOptions = {
   }
 };
 
-export { motoriseOptions, interrupteurOptions, commandeOptions, manualOptions ,sortieDeCableOptions, ControlOptions, PoseOptions, telecommandeOptions , colorOptions }
+export { motoriseOptions, interrupteurOptions, commandeOptions, manualOptions ,sortieDeCableOptions, ControlOptions, PoseOptions, telecommandeOptions , colorOptions , LameChoices }
