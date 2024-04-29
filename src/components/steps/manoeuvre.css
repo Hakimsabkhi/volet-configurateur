@@ -1,7 +1,4 @@
-
-
-
-.ma-containerG{
+.ma-containerG {
   width: 100%;
   display: flex;
   flex-direction: column;
@@ -15,12 +12,15 @@
   justify-content: center;
   gap: 10px;
 }
-
-
+.ManoeuvreSectionG {
+display: flex;
+flex-direction: column;
+gap: 10px;
+}
 .ma-container-INTERRUPTEUR {
   display: flex;
   justify-content: center;
-  gap: 10px ;
+  gap: 10px;
   align-self: center;
   margin: auto;
 }
@@ -37,21 +37,19 @@
   color: #000;
 }
 
-.INTERRUPTEUR-btn.selected  {
+.INTERRUPTEUR-btn.selected {
   color: rgb(0, 0, 0); /* This will change the text color to blue when selected */
   background-color: #ffffff;
   border: 2px solid rgba(94, 197, 238, 0.644);
-
 }
 
 .INTERRUPTEUR-btn {
   width: 130px;
-  
-    background-color: rgba(94, 197, 238, 0.644);
-    border: 2px solid rgba(94, 197, 238, 0.644);
-    border-radius: 5px;
-  
-  }
+
+  background-color: rgba(94, 197, 238, 0.644);
+  border: 2px solid rgba(94, 197, 238, 0.644);
+  border-radius: 5px;
+}
 
 .choice-btn:hover {
   background-color: rgb(255, 255, 255);
@@ -86,7 +84,6 @@
   justify-content: center;
 }
 
-
 .choice-label {
   vertical-align: middle;
   font-weight: bold;
@@ -96,7 +93,6 @@
 .ma-button-image {
   width: 50px;
   height: 50px;
-
 }
 
 .text {
@@ -105,20 +101,27 @@
   justify-content: center;
 }
 
-.section-1{
+.section-1 {
   display: flex;
   justify-content: space-around;
 }
 
-
-
 @media (max-width: 1050px) and (min-height: 800px) {
-
   .button-image {
     width: 50px;
     height: 50px;
-
-  } 
-.choice-description {
+  }
+  .choice-description {
     display: none;
-  }}
+  }
+}
+
+@media (max-width: 1349px) {
+  .button-image {
+    width: 50px;
+    height: 50px;
+  }
+  .choice-description {
+    display: none;
+  }
+}

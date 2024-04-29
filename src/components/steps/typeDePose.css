@@ -10,7 +10,7 @@
   display: flex;
   background-color: rgba(94, 197, 238, 0.644);
   border: 2px solid rgb(126, 126, 126); /* consolidated border property */
-  border-radius: 10px;
+  border-radius: 5px;
   padding: 5px;
   gap: 20px;
   cursor: pointer; /* Added to indicate it's clickable */
@@ -61,7 +61,7 @@
   padding: 10px;
   background-color: rgb(12, 17, 63);
   border: 2px solid #ffffff;
-  border-radius: 10px;
+  border-radius: 5px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* optional: adds shadow for better visibility */
   z-index: 10; /* Ensure it's above other elements */
 }

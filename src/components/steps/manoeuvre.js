@@ -41,29 +41,39 @@ function Manoeuvre({ enableNextButton }) {
     <div className="ma-containerG">
       <OptionSelector options={ControlOptions} selectedOption={ManoeuvreType} handleChange={handleChange(setManoeuvreType)} type="choice" />
       {ManoeuvreType === 'Manuel' && (
-        <>
+        <div className="ManoeuvreSection">
           <h2 className="text">Outil De Commande</h2>
           <ManualSelector selectedOption={ManualType} handleChange={handleChange(setManualType)} />
-        </>
+        </div>
       )}
       {ManoeuvreType === 'Motorisé' && (
         <>
-          <h2 className="text">Type de Motorisation (marque : Becker)</h2>
-          <MotoriseSelector selectedOption={MotoriseType} handleChange={handleChange(setMotoriseType)} />
+          <div className="ManoeuvreSectionG">
+          <div className="ManoeuvreSection">
+            <h2 className="text">Type de Motorisation (marque : Becker)</h2>
+            <MotoriseSelector selectedOption={MotoriseType} handleChange={handleChange(setMotoriseType)} />
+          </div>
           {MotoriseType === 'Radio' && (
             <>
-              <h2 className="text">Télécommande</h2>
-              <TelecommandeSelector selectedOption={TelecommandeType} handleChange={handleChange(setTelecommandeType)} />
+              <div className="ManoeuvreSection">
+                <h2 className="text">Télécommande</h2>
+                <TelecommandeSelector selectedOption={TelecommandeType} handleChange={handleChange(setTelecommandeType)} />
+              </div>
             </>
           )}
           {MotoriseType === 'Filaire' && (
             <>
-              <h2 className="text">Interrupteur</h2>
-              <InterrupteurSelector selectedOption={InterrupteurType} handleChange={handleChange(setInterrupteurType)} />
-              <h2 className="text">Sortie de câble</h2>
-              <SortieDeCableSelector selectedOption={SortieDeCableType} handleChange={handleChange(setSortieDeCableType)} />
+              <div className="ManoeuvreSection">
+                <h2 className="text">Interrupteur</h2>
+                <InterrupteurSelector selectedOption={InterrupteurType} handleChange={handleChange(setInterrupteurType)} />
+              </div>
+              <div className="ManoeuvreSection">
+                <h2 className="text">Sortie de câble</h2>
+                <SortieDeCableSelector selectedOption={SortieDeCableType} handleChange={handleChange(setSortieDeCableType)} />
+              </div>
             </>
           )}
+          </div>
         </>
       )}
     </div>

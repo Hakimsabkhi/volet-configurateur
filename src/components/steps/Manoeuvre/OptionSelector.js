@@ -13,7 +13,7 @@ const OptionSelector = ({ options, selectedOption, handleChange, type }) => {
   };
 
   return (
-    <div>
+    <div className='Main-container'>
       <div ref={containerRef} className="ma-container">
         {options.map((option, index) => (
           <label key={index} 

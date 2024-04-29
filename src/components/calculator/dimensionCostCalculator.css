@@ -84,16 +84,24 @@
 }
 
 @media (max-width: 1050px) and (min-height: 800px) {
-.cost-calculator-container {
-flex-direction: row;
+  .cost-calculator-container {
+    flex-direction: row;
+  }
+
+  .total-cost {
+    width: 50%;
+  }
+
+  .presouscost {
+    width: 50%;
+  }
 }
 
-.total-cost {
-  width: 50%;
-}
-
-.presouscost {
-
-  width: 50%;
-}
+@media (max-width: 1349px) {
+  .nav-btn {
+    padding: 8px 17px;
+  }
+  .color-choice {
+    font-size: 7px;
+  }
 }
