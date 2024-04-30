@@ -48,6 +48,14 @@ const LameChoices = [
   { label: 'Lame 55', description: 'Lame volet roulant aluminium isolée 55x14.', image: Lame55Image }
 ]
 
+const ManoeuvreConfig = [
+  "Outil De Commande",
+  "Type de Motorisation (marque : Becker)",
+  "Type de Motorisation (marque : Becker)",
+  "Interrupteur",
+  "Sortie de câble"
+];
+
 const colorOptions = {
   coulisse: {
     'Blanc': '#ffffff',
@@ -75,4 +83,4 @@ const colorOptions = {
   }
 };
 
-export { motoriseOptions, interrupteurOptions, commandeOptions, manualOptions ,sortieDeCableOptions, ControlOptions, PoseOptions, telecommandeOptions , colorOptions , LameChoices }
+export { motoriseOptions, interrupteurOptions, commandeOptions, manualOptions ,sortieDeCableOptions, ControlOptions, PoseOptions, telecommandeOptions , colorOptions , LameChoices ,ManoeuvreConfig  }
