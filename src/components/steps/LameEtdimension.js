@@ -17,6 +17,7 @@ function LameEtdimension({ enableNextButton }) {
     console.log(`Enabling button: ${isEnabled}`); // Add debugging log
     enableNextButton(isEnabled);
   }, [lameSelection, dimensions]); // Remove enableNextButton from dependencies
+  
   const handleMouseEnter = (event, choice) => {
     const rect = event.target.getBoundingClientRect();
     setPopupPosition({ top: rect.top + window.scrollY, left: rect.left + rect.width });
@@ -41,13 +42,18 @@ function LameEtdimension({ enableNextButton }) {
     }
   };
 
+
   const handleDimensionChange = (dimensionName, value) => {
     dispatch(setDimensions({ ...dimensions, [dimensionName]: Number(value) }));
   };
 
   const handleBlur = (dimensionName, value) => {
-    handleDimensionChange(dimensionName, value); // Reuse the existing logic in handleDimensionChange
-  };
+    let newValue = Number(value)
+    let min = 600
+    let max = dimensionName === 'Largeur' ? (lameSelection === 'Lame 41' ? 3000 : 3500) : lameSelection === 'Lame 41' ? 2700 : 3000
+    newValue = Math.max(Math.min(newValue, max), min)
+    dispatch(setDimensions({ ...dimensions, [dimensionName]: newValue }))
+  }
 
   return (
     <div className="Lameetdimension">
