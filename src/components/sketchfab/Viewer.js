@@ -15,7 +15,7 @@ function Viewer({ setPosition, setTarget }) {
 
     if (window.Sketchfab) {
       const client = new window.Sketchfab(iframe);
-      client.init('8c979e17364b4a47816ad05f394f30c7', {
+      client.init('0a3614b2e92f4b3f8e8f2945dbfac1da', {
         success: (api) => {
           api.start({ preload: 1 });
           api.addEventListener('viewerready', () => {
@@ -70,10 +70,9 @@ function Viewer({ setPosition, setTarget }) {
         ui_fullscreen: 0,
         ui_annotations: 0,
         prevent_user_light_rotation: 1,
-        orbit_constraint_pitch_down: -Math.PI / 16,
-        orbit_constraint_pitch_up: Math.PI / 2,
-        orbit_constraint_zoom_in: 0,
-        orbit_constraint_zoom_out: 6,
+        ui_controls: 0,
+        ui_fadeout :0,
+        ui_general_controls :0,
       });
     } else {
       console.error('Sketchfab API script not loaded');
@@ -103,7 +102,7 @@ function Viewer({ setPosition, setTarget }) {
   useEffect(() => {
     const blurTimeout = setTimeout(() => {
       setIsBlurred(false);
-    }, 10000);
+    }, 5000);
 
     const progressInterval = setInterval(() => {
       setProgress(prevProgress => (prevProgress >= 100 ? 100 : prevProgress + 5));
@@ -153,8 +152,8 @@ function Viewer({ setPosition, setTarget }) {
         </div>
       )}
       <div className="overlay-buttons">
-        <button className='InteractionButton' onClick={() => handleViewChange([-9.93, 6.88, 1.96], [-6.29, 2.11, 1.97])}>Outside View</button>
-        <button className='InteractionButton' onClick={() => handleViewChange([-1.47, -1.74, 1.56], [-5.12, 3.01, 1.56])}>Inside View</button>
+        <button className='InteractionButton' onClick={() => handleViewChange([-10.7206, 7.83963, 1.6895], [-4.6246, -0.74928, 1.57804])}>Outside View</button>
+        <button className='InteractionButton' onClick={() => handleViewChange([-0.20124, -3.4002, 1.5615], [-5.12, 3.01, 1.56])}>Inside View</button>
         <button className='InteractionButton' onClick={toggleUserInteraction}>{userInteractionEnabled ? 'Disable Interaction' : 'Enable Interaction'}</button>
       </div>
     </div>
